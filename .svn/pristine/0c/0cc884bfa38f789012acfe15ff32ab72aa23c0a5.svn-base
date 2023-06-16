@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: test-job
-  profiles:
-    active: dev
-server:
-  port: 8092
