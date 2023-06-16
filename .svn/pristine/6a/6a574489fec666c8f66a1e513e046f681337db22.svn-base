@@ -1,0 +1,22 @@
+package com.hy.demo.exception;
+
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+/**
+ *
+ * @Description 统一异常拦截
+ * @Author yao
+ * @Date 2023/5/29 14:59
+ **/
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+
+    @ExceptionHandler(Exception.class)
+    public Object Exception(Exception ex) {
+        ExceptionResponse response =new ExceptionResponse(ex.getMessage());
+        return response;
+    }
+}

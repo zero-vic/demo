@@ -1,0 +1,119 @@
+
+
+spring:
+  datasource:
+    dynamic:
+      primary: master  #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      datasource:
+        master:
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://localhost:5432/test
+          username: postgres
+          password: 123456
+        test:
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://localhost:5432/test2
+          username: postgres
+          password: 123456
+  shardingsphere:
+#    mode:
+#      type: Standalone # 运行模式配置 可选配置：Standalone、Cluster
+#      repository:
+#        type: File # 持久化仓库类型
+#        props:
+#          path: .shardingsphere # 持久化仓库所需属性
+#      overwrite: false # 是否使用本地配置覆盖持久化配置
+    datasource:
+      names: ds_0, ds_1 # 配置真实数据源
+      ds_0: # 配置第 1 个数据源
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/test
+        username: postgres
+        password: 123456
+      ds_1: # 配置第 2 个数据源
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/test2
+        username: postgres
+        password: 123456
+#      ds_1: # 配置第 2 个数据源
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driverClassName: com.mysql.cj.jdbc.Driver
+#        jdbcUrl: jdbc:mysql://localhost:3306/test2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#        username: root
+#        password: 123456
+    props:
+      sql:
+        show: true # 开启sql打印
+
+    rules:
+      sharding:
+        sharding-algorithms: # 分片算法配置
+          database-inline:
+            type: INLINE #算法类型
+            props:
+              #  分片算法属性配置
+              algorithm-expression: ds_$->{tid % 2}
+          t_user_inline:
+            type: INLINE
+            props:
+              algorithm-expression: sys_user_0
+          time_inline:  # 时间范围分片算法配置
+            type: INTERVAL
+            props:
+              datetime-pattern: "yyyy-MM-dd HH:mm:ss" #分片键的时间戳格式，必须遵循 Java DateTimeFormatter 的格式。例如：yyyy-MM-dd HH:mm:ss
+              sharding-suffix-pattern: "yyyy_MM" #分片数据源或真实表的后缀格式，必须遵循 Java DateTimeFormatter 的格式
+              datetime-lower: "2023-05-01 00:00:00"#时间分片下界值
+              datetime-upper: "2023-10-30 00:00:00"#时间分片上界值
+              datetime-interval-amount: 1 #分片键时间间隔，超过该时间间隔将进入下一分片
+              datetime-interval-unit: MONTHS #分片键时间间隔单位，必须遵循 Java ChronoUnit 的枚举值。例如：MONTHS
+        default-key-generate-strategy: # 默认分布式序列策略
+          column: id
+          key-generator-name: snowflake
+        key-generators: # 分布式序列算法配置
+          snowflake:
+            type: SNOWFLAKE
+            props:
+              worker-id: 1
+        tables: # 标准分片表配置
+          sys_user_0:
+            actual-data-nodes: ds_$->{0..1}.sys_user_0
+            database-strategy: # 分库策略
+              standard:
+                sharding-column: tid # 分片列名称
+                sharding-algorithm-name: database-inline  # 分片算法名称
+            table-strategy:  # 分表策略
+              standard:
+                # 分表列名称
+                sharding-column: tid
+                # 分表算法名称
+                sharding-algorithm-name: t_user_inline
+            keyGeneratorColumnName: tid
+            key-generate-strategy: #分布式序列策略配置
+              column: tid # 分布式序列列名称
+              key-generator-name: snowflake # 分布式序列算法名称
+              props:  # 雪花算法的worker-id  机器为标识 0-1024
+                worker-id: 1
+          t_user:
+            logicTable: t_user
+            actual-data-nodes: ds_0.t_user_2023_${(1..12).collect{t ->t.toString().padLeft(2,'0')}}
+            table-strategy:
+              standard:
+                sharding-column: create_time
+                sharding-algorithm-name: time_inline
+            key-generate-strategy:
+              column: uid
+              key-generator-name: snowflake
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false # 关闭驼峰命名规则
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.baomidou: debug
+    org.apache.shardingsphere: debug

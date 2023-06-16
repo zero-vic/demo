@@ -1,0 +1,120 @@
+package ${package.Controller};
+
+import org.springframework.web.bind.annotation.*;
+<% if(!restControllerStyle){ %>
+import org.springframework.stereotype.Controller;
+<% } %>
+<% if(isNotEmpty(superControllerClassPackage)){ %>
+import ${superControllerClassPackage};
+<% } %>
+<% if(isNotEmpty(controllerMethods.list)){  %>
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+<% } %>
+<% if(isNotEmpty(controllerMethods.hasMethod)){  %>
+import com.hy.demo.common.CommonPage;			
+import com.hy.demo.common.CommonResult;
+import ${package.Service}.${table.serviceName};
+import ${package.Entity}.${table.entityName};
+import org.springframework.beans.factory.annotation.Autowired;
+<% } %>
+<% if(isNotEmpty(swaggerAnnotation)){	%>
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+<% } %>
+
+/**
+ * <p>
+ * ${table.comment!} 前端控制器
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+<% if(restControllerStyle){ %>
+@RestController
+<% }else{ %>
+@Controller
+<% } %>
+<% if(isNotEmpty(swaggerAnnotation)){	%>
+@Api(tags="${table.controllerName}" ,description = "${table.entityName}接口管理")
+<% } %>
+@RequestMapping("<% if(isNotEmpty(package.ModuleName)){ %>/${package.ModuleName}<% } %>/<% if(isNotEmpty(controllerMappingHyphenStyle)){ %>${controllerMappingHyphen}<% }else{ %>${table.entityPath}<% } %>")
+<% if(kotlin){ %>
+class ${table.controllerName}<% if(isNotEmpty(superControllerClass)){ %> : ${superControllerClass}()<% } %>
+<% }else{ %>
+    <% if(isNotEmpty(superControllerClass)){ %>
+public class ${table.controllerName} extends ${superControllerClass} {
+    <% }else{ %>
+public class ${table.controllerName} {
+    <% } %>
+
+    <%
+       var serviceInstanceName = @cn.hutool.core.util.StrUtil.lowerFirst(table.serviceName);
+    %>
+
+    <% if(isNotEmpty(controllerMethods.hasMethod)){  %>
+    @Autowired
+    private ${table.serviceName} ${serviceInstanceName};
+    <% } %>
+
+
+    <% if(isNotEmpty(swaggerAnnotation) && isNotEmpty(controllerMethods.list)){	%>
+    @ApiOperation(value = "列表分页接口")
+    @ApiImplicitParams({ @ApiImplicitParam(name = "pageNum",value = "页码",required = true,paramType = "query",dataType = "Long",defaultValue = "1", dataTypeClass = Long.class),
+            @ApiImplicitParam(name = "pageSize",value = "页码长度",required = true,paramType = "query",dataType = "Long",defaultValue = "10", dataTypeClass = Long.class)})
+    <% } %> 
+    <% if(isNotEmpty(controllerMethods.list)){  %>
+    @GetMapping(value = "query")
+    public CommonResult<CommonPage<${table.entityName}>> list(@RequestParam("pageNum") Long pageNum, @RequestParam("pageSize") Long pageSize) {
+        pageNum = pageNum == null ? 1L: pageNum;
+        pageSize = pageSize == null ? 10L: pageSize;
+	return CommonResult.success(new CommonPage<>(${serviceInstanceName}.page(new Page<>(pageNum,pageSize),new QueryWrapper<>())));
+    }
+    <% } %>
+
+    <% if(isNotEmpty(swaggerAnnotation) && isNotEmpty(controllerMethods.getById)){	%>
+    @ApiOperation(value = "根据id查询接口")
+    @ApiImplicitParam(paramType = "query", name = "id", value = "主键Id", required = true, dataType = "String", dataTypeClass = String.class)
+    <% } %>   
+    <% if(isNotEmpty(controllerMethods.getById)){ %>
+    @GetMapping(value = "getById")
+    public CommonResult<${table.entityName}> getById(@RequestParam("id") String id) {
+    	return CommonResult.success(${serviceInstanceName}.getById(id));
+    }
+    <% } %>
+    <% if(isNotEmpty(swaggerAnnotation) && isNotEmpty(controllerMethods.create)){	%>
+    @ApiOperation(value = "新增接口")
+    <% } %>
+    <% if(isNotEmpty(controllerMethods.create)){ %>
+    @PostMapping(value = "/create")
+    public CommonResult<${table.entityName}> create(@RequestBody ${table.entityName} params) {
+        ${serviceInstanceName}.save(params);
+	return CommonResult.success();
+    }
+    <% } %>
+    <% if(isNotEmpty(swaggerAnnotation) && isNotEmpty(controllerMethods.delete)){	%>
+    @ApiOperation(value = "根据id删除接口")
+    @ApiImplicitParam(paramType = "query", name = "id", value = "主键Id", required = true, dataType = "String", dataTypeClass = String.class)
+    <% } %>
+    <% if(isNotEmpty(controllerMethods.delete)){ %>
+    @PostMapping(value = "/del")
+    public CommonResult<${table.entityName}> delete(@RequestParam("id") String id) {
+        ${serviceInstanceName}.removeById(id);
+        return CommonResult.success();
+    }
+    <% } %>
+    <% if(isNotEmpty(swaggerAnnotation) && isNotEmpty(controllerMethods.update)){	%>
+    @ApiOperation(value = "更新接口")
+    <% } %>
+    <% if(isNotEmpty(controllerMethods.update)){ %>
+    @PostMapping(value = "/update")
+    public CommonResult<${table.entityName}> update(@RequestBody ${table.entityName} params) {
+        ${serviceInstanceName}.updateById(params);
+        return CommonResult.success();
+    }
+    <% } %>
+}
+<% } %>

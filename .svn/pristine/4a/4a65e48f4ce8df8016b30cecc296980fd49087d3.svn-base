@@ -1,0 +1,36 @@
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8086/xxl-job-admin
+    accessToken: default_token
+    executor:
+      appname: xxl-job-executor-sample        # xxl-job executor appname
+      address:
+      ip: 127.0.0.1
+      port: 9999
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+spring:
+  datasource:
+    url: jdbc:postgresql://10.32.128.113:5432/ssm
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5            # 最小空闲连接数量 默认10
+      maximum-pool-size: 10      # 连接池默认最大连接数 默认10
+      idle-timeout: 30000        # 空闲时间最大存活时间 默认10分钟（60000）
+      auto-commit: true          # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      pool-name: HikariCPJob      # 连接池名称
+      max-lifetime: 180000       # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      connection-timeout: 30000  # 数据库连接超时时间,默认30秒，即30000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false # 关闭驼峰命名规则
+  mapper-locations: classpath:mapper/*Mapper.xml
+logging:
+  config: classpath:logback.xml

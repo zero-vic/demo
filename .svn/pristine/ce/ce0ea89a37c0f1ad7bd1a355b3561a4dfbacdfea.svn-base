@@ -1,0 +1,62 @@
+server:
+  port: 8201
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true #????service-id
+      routes: #??????
+        - id: demo-oauth2-auth
+          uri: lb://demo-oauth2-auth
+          predicates:
+            - Path=/demo-oauth2-auth/**
+          filters:
+            - StripPrefix=1
+        - id: test-api
+          uri: lb://test-api
+          predicates:
+            - Path=/test-api/**
+          filters:
+            - StripPrefix=1
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8201/demo-oauth2-auth/rsa/publicKey' #??RSA???????
+  application:
+    name: demo-gateway
+#  redis:
+#    database: 0
+#    port: 6379
+#    host: localhost
+#    password:
+secure:
+  ignore:
+    urls: #???????
+      - "/doc.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/*/v2/api-docs"
+      - "/*/*.js"
+      - "/*/*.css"
+      - "/*/*.png"
+      - "/*/*.ico"
+      - "/webjars/**"
+      - "/actuator/**"
+      - "/demo-oauth2-auth/oauth/token"
+      - "/demo-oauth2-auth/rsa/publicKey"
+management: #??SpringBoot Admin???
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+

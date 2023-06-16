@@ -1,0 +1,31 @@
+server:
+  port: 9401
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  application:
+    name: demo-oauth2-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yml #指定文件扩展名，默认为properties
+        prefix: demo-oauth2-auth
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

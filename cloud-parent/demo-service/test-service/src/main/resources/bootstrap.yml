@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: test-dubbo-provider
+  profiles:
+    active: dev
+#  main:
+#    allow-bean-definition-overriding: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: 123456
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.200.128:3306/restkeeper_operator?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+        prefix: test-dubbo-provider
+        shared-dataids: common.yml
+        refreshable-dataids: common.yml
+
+
+
+#dubbo:
+#  scan:
+#    base-packages: com.restkeeper
+#  protocols:
+#    dubbo:
+#      name: dubbo
+#      port: -1
+#      serialization: kryo
+#  registry:
+#    address: spring-cloud://192.168.200.128
+#  consumer:
+#    timeout: 600000
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#logging:
+#  level:
+#    com.restkeeper: debug

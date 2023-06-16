@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo-web
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://10.32.128.113:5432/ssm
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    cache: false
+    suffix: .html
+    servlet:
+      content-type: text/html
+  servlet:
+    multipart:
+      max-file-size: 10MB         # 单个文件上传大小限制
+      max-request-size: 15MB      # 多个文件上传大小限制
+upload:
+  location: "F:/temp/"
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false # 取消驼峰转换规则
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml #

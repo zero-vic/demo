@@ -1,0 +1,49 @@
+#server:
+#  port: 9401
+spring:
+  datasource:
+    url: jdbc:postgresql://10.32.128.113:5432/ssm
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  profiles:
+#    active: dev
+#  application:
+#    name: demo-oauth2-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.32.128.102:8848
+  #      config:
+  #        server-addr: localhost:8848
+  #        file-extension: yml #指定文件扩展名，默认为properties
+  #        prefix: demo-oauth2-auth
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false # 关闭驼峰命名规则
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 设置日志打印级别
+logging:
+  level:
+    com.hy.demo: debug
+
+
