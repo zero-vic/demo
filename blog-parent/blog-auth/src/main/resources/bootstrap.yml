@@ -1,0 +1,10 @@
+server:
+  port: 9401
+spring:
+  profiles:
+    active: dev
+  application:
+    name: blog-oauth2-auth
+
+
+
