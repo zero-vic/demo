@@ -8,6 +8,8 @@
         <module>blog-gateway</module>
         <module>blog-common</module>
         <module>blog-service</module>
+        <module>blog-mybatis-plus-generator</module>
+        <module>blog-system</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -36,7 +38,7 @@
         <knife4j.version>3.0.3</knife4j.version>
         <nimbus-jose-jwt.version>9.23</nimbus-jose-jwt.version>
         <postgresql.version>42.5.1</postgresql.version>
-        <mybatis-spring-boot-starter.version>2.3.0</mybatis-spring-boot-starter.version>
+        <mybatis-plus.version>3.3.0</mybatis-plus.version>
         <xxl-job.version>2.4.0</xxl-job.version>
     </properties>
     <dependencies>
@@ -100,7 +102,7 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.3.0</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -139,11 +141,11 @@
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot-starter.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.mybatis.spring.boot</groupId>-->
+<!--                <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--                <version>${mybatis-spring-boot-starter.version}</version>-->
+<!--            </dependency>-->
             <!-- xxl-job-core -->
             <dependency>
                 <groupId>com.xuxueli</groupId>

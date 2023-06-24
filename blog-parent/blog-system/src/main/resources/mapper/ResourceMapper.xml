@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xy.blog.mapper.ResourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xy.blog.entity.Resource">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="remark" property="remark" />
+        <result column="seq" property="seq" />
+        <result column="url" property="url" />
+        <result column="pid" property="pid" />
+        <result column="type" property="type" />
+        <result column="create_user" property="createUser" />
+        <result column="create_time" property="createTime" />
+        <result column="update_user" property="updateUser" />
+        <result column="update_time" property="updateTime" />
+        <result column="delete_flag" property="deleteFlag" />
+    </resultMap>
+
+    <resultMap id="ResRoleResultMap" type="com.xy.blog.po.ResourcePo">
+        <id column="id" property="resId" />
+        <result column="name" property="name" />
+        <result column="remark" property="remark" />
+        <result column="seq" property="seq" />
+        <result column="url" property="url" />
+        <result column="pid" property="pid" />
+        <result column="type" property="type" />
+        <result column="create_user" property="createUser" />
+        <result column="create_time" property="createTime" />
+        <result column="update_user" property="updateUser" />
+        <result column="update_time" property="updateTime" />
+        <result column="delete_flag" property="deleteFlag" />
+        <collection property="roles" ofType="com.xy.blog.po.RolePo">
+            <id column="rid" property="rId"/>
+            <result column="roleName" property="roleName"/>
+        </collection>
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, remark, seq, url, pid, type, create_user, create_time, update_user, update_time, delete_flag
+    </sql>
+
+
+    <select id="getRoleResListByUserId" resultMap="ResRoleResultMap">
+        select t1.*,t3.`name`  roleName
+        from t_resource t1
+                 LEFT JOIN t_role_resource t2 on t1.id = t2.resource_id
+                 LEFT JOIN t_role t3 on t2.role_id = t3.id
+                 LEFT JOIN t_user_role t4 on t4.role_id = t3.id
+        WHERE t4.user_id = #{userId} and  t1.delete_flag = 0;
+    </select>
+
+</mapper>
