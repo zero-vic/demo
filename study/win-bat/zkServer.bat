@@ -1,0 +1,1 @@
+start cmd  /k "cd /d D:\ProgramFiles\zookeeper-3.4.8\bin\ && zkServer.cmd"

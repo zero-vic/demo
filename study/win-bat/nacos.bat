@@ -1,0 +1,1 @@
+start cmd  /k "cd /d D:\ProgramFiles\nacos-server-2.1.0\nacos\bin\ && startup.cmd -m standalone"

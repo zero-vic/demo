@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -30,6 +33,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2RUwoMY2RjuUbtuZh11hiSoZBIb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "F:/git-projects/blog-parent/blog-common/src/main/java/com/xy/blog/common/result",
+    "last_opened_file_path": "F:/git-idea/blog-parent",
     "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
@@ -55,6 +59,22 @@
       <recent name="com.xy.blog.auth.config" />
     </key>
   </component>
+  <component name="RunManager" selected="Spring Boot.BlogAuthApplication">
+    <configuration name="BlogAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xy.blog.auth.BlogAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogGateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xy.blog.gateway.BlogGateWayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687318141792</updated>
       <workItem from="1687318143226" duration="2976000" />
+      <workItem from="1687321713371" duration="40000" />
     </task>
     <servers />
   </component>
