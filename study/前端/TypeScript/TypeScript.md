@@ -774,6 +774,80 @@ for (let [key, value] of myMap) {
 }
 ```
 
+## TypeScript keyof
+
+> 该操作符可以用于获取某种 类型 的所有键，其返回类型是 联合类型
+
+作用interface时，将其属性名全部解构出来
+
+```typescript
+interface IPerson {
+  name: string,
+  age: number,
+  sex: 0 | 1
+}
+
+type P1 = keyof IPerson
+interface ITest {
+  key: P1
+}
+let test:ITest = {
+  key: "name" // name | age | sex
+}
+
+```
+
+作用数组时，将它生成的对象属性当联合类型返回
+
+```typescript
+type P1 = keyof Array<string>[]
+
+interface ITest {
+  key: P1
+}
+
+let test:ITest = {
+  key: "pop" // length | concat | ...
+}
+alert(test.key)
+```
+
+作用于类时，效果类似于对象，它将类生成的对象属性，当联合类型返回。
+
+```typescript
+
+class Person {
+  name: string
+  age: number
+  sex: 0 | 1
+
+  constructor(name: string, age: number, sex: 0 | 1) {
+    this.name = name
+    this.age = age
+    this.sex = sex
+  }
+
+  getName(): string {
+    return this.name
+  }
+  setName(name: string): void {
+    this.name = name
+  }
+}
+
+type K1 = keyof Person
+
+interface ITest {
+  key: K1
+}
+let test: ITest = {
+  key: "age" // age | name | sex | setName | getName
+}
+
+```
+
+
+
 ## TypeScript 泛型
 
 函数泛型
@@ -829,6 +903,25 @@ function getLegnth<T extends Len>(arg:T) {
 getLegnth<string>('123')
 
 ```
+
+使用keyof约束对象
+
+> 其中使用了TS泛型和泛型约束。首先定义了T类型并使用extends关键字继承object类型的子类型，然后使用keyof操作符获取T类型的所有键，它的返回 类型是联合 类型，最后利用extends关键字约束 K类型必须为keyof T联合类型的子类型
+
+```typescript
+function prop<T, K extends keyof T>(obj: T, key: K) {
+   return obj[key]
+}
+ 
+
+let o = { a: 1, b: 2, c: 3 }
+ 
+prop(o, 'a') 
+prop(o, 'd') //此时就会报错发现找不到
+
+```
+
+
 
 ## TypeScript内置对象
 
