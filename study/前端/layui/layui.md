@@ -417,3 +417,15 @@ function paramIsBlank(param){
  }
 ```
 
+## Layui 时间选择器在高度不够时闪退问题
+
+加上点击触发事件 `trigger: 'click'`
+
+```js
+    laydate.render({
+      elem: '#adddate'
+      , type: 'datetime'
+      ,trigger: 'click'
+    });
+```
+
