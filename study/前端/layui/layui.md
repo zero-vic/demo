@@ -429,3 +429,52 @@ function paramIsBlank(param){
     });
 ```
 
+## Layui 登录之后token过期自动刷新token和全局请求头的设置
+
+使用全局ajax来处理
+
+```javascript
+// ajax 方法请求设置
+$.ajaxSetup({
+    cache: false,
+    crossDomain: true,
+    // 添加请求头
+    // headers :{'Authorization':token}, 
+    complete: function (xhr) {
+        // token 过期刷新token
+        if (xhr.responseJSON && xhr.responseJSON.code == 407) {
+            // 刷新token的接口
+            $.ajax({
+                type: 'post',
+                url: url,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: { "refreshToken": localStorage.getItem("refreshToken") },
+                success: function (res) {
+                    if (res.code == 200) {
+                        localStorage.setItem("refreshToken", res.data.refreshToken);
+                        var token = res.data.tokenHead + res.data.token;
+                        localStorage.setItem("token", token);
+                        location.reload();
+                    }
+                },
+                error: function (res) {
+
+                },
+                dataTpye: 'json'
+            })
+        } else if (xhr.responseJSON && xhr.responseJSON.code == 401) {
+            // 暂未登录
+            top.location.href = "http://127.0.0.1:5500/login.html";
+
+        }
+
+    },
+    beforeSend: function () {
+        if (!localStorage.getItem("token") || !localStorage.getItem("refreshToken")) {
+            top.location.href = "http://127.0.0.1:5500/login.html";
+        }
+    }
+
+});
+```
+
