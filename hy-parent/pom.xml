@@ -34,6 +34,7 @@
     <modules>
         <module>hy-auth</module>
         <module>hy-common</module>
+        <module>hy-gateway</module>
     </modules>
     <dependencies>
         <!-- 监控检查-->

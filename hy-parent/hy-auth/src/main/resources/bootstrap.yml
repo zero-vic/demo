@@ -1,0 +1,10 @@
+server:
+  port: 9401
+spring:
+  profiles:
+    active: dev
+  application:
+    name: demo-oauth2-auth
+
+
+

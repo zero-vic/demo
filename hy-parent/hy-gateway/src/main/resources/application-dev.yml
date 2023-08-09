@@ -1,0 +1,105 @@
+#server:
+#  port: 8201
+spring:
+  datasource:
+    url: jdbc:postgresql://10.32.128.113:5432/ssm
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5            # 最小空闲连接数量 默认10
+      maximum-pool-size: 10      # 连接池默认最大连接数 默认10
+      idle-timeout: 30000        # 空闲时间最大存活时间
+      auto-commit: true          # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      pool-name: HikariCPGate      # 连接池名称
+      max-lifetime: 180000       # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      connection-timeout: 30000  # 数据库连接超时时间,默认30秒，即30000
+      connection-test-query: SELECT 1
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.32.128.102:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true #????service-id
+      routes: #??????
+        - id: auth
+          #          uri: http://localhost:9401
+          uri: lb://demo-oauth2-auth
+          predicates:
+            - Path=/demo-oauth2-auth/**,/oauth/token,/rsa/**
+          filters:
+            - StripPrefix=1
+        - id: api
+          #          uri: http://localhost:8081
+          uri: lb://test-api
+          predicates:
+            - Path=/test-api/**,/test/**,/user/test/**
+          filters:
+            - StripPrefix=1 # 过滤路径的第一个地址
+        - id: demo-job-admin
+          uri: lb://demo-job-admin
+          predicates:
+            - Path=/demo-job-admin/**
+          filters:
+            - StripPrefix=1
+        - id: xxl-job-admin
+          uri: lb://demo-job-admin
+          predicates:
+            - Path=/xxl-job-admin/**
+          filters:
+            - StripPrefix=0
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8201/demo-oauth2-auth/rsa/publicKey' #??RSA???????
+#  application:
+#    name: demo-gateway
+#  redis:
+#    database: 0
+#    port: 6379
+#    host: localhost
+#    password:
+secure:
+  ignore:
+    urls: #
+      - "/doc.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/*/v2/api-docs"
+      - "/*/*.js"
+      - "/*/*.css"
+      - "/*/*.png"
+      - "/*/*.ico"
+      - "/webjars/**"
+      - "/actuator/**"
+      - "/demo-oauth2-auth/oauth/token"
+      - "/demo-oauth2-auth/oauth/token_key"
+      - "/demo-oauth2-auth/rsa/publicKey"
+      - "/demo-oauth2-auth/oauth/authorize"
+      - "/test-api/api/login"
+      - "/xxl-job-admin/**"
+      - "/xxl-job-admin/static/*/*.js"
+      - "/demo-job-admin/**"
+management: #SpringBoot Admin
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false # 关闭驼峰命名规则
+  mapper-locations: classpath:mapper/*Mapper.xml
+
