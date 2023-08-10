@@ -31,22 +31,29 @@ spring:
       routes: #??????
         - id: auth
           #          uri: http://localhost:9401
-          uri: lb://demo-oauth2-auth
+          uri: lb://hy-oauth2-auth
           predicates:
-            - Path=/demo-oauth2-auth/**,/oauth/token,/rsa/**
+            - Path=/hy-oauth2-auth/**
           filters:
             - StripPrefix=1
-        - id: api
+#        - id: api
           #          uri: http://localhost:8081
-          uri: lb://test-api
+#          uri: lb://test-api
+#          predicates:
+#            - Path=/test-api/**,/test/**,/user/test/**
+#          filters:
+#            - StripPrefix=1 # 过滤路径的第一个地址
+        - id: kefu-api
+          #          uri: http://localhost:8081
+          uri: lb://kefu-api
           predicates:
-            - Path=/test-api/**,/test/**,/user/test/**
+            - Path=/kefu-api/**
           filters:
             - StripPrefix=1 # 过滤路径的第一个地址
-        - id: demo-job-admin
-          uri: lb://demo-job-admin
+        - id: hy-job-admin
+          uri: lb://hy-job-admin
           predicates:
-            - Path=/demo-job-admin/**
+            - Path=/hy-job-admin/**
           filters:
             - StripPrefix=1
         - id: xxl-job-admin
@@ -55,19 +62,36 @@ spring:
             - Path=/xxl-job-admin/**
           filters:
             - StripPrefix=0
+          # 全局的跨域配置
+      globalcors:
+        # 解决options请求被拦截问题
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          # 拦截的请求
+          '[/**]':
+            # 允许跨域的请求
+            allowedOriginPatterns: "*" # spring boot2.4以后的配置
+            # 允许请求中携带的头信息
+            allowedHeaders: "*"
+            # 运行跨域的请求方式
+            allowedMethods: "*"
+            # 是否允许携带cookie
+            allowCredentials: true
+            # 跨域检测的有效期,单位s
+            maxAge: 36000
 
   security:
     oauth2:
       resourceserver:
         jwt:
           jwk-set-uri: 'http://localhost:8201/demo-oauth2-auth/rsa/publicKey' #??RSA???????
-#  application:
-#    name: demo-gateway
-#  redis:
-#    database: 0
-#    port: 6379
-#    host: localhost
-#    password:
+  #  application:
+  #    name: demo-gateway
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
 secure:
   ignore:
     urls: #
@@ -82,13 +106,20 @@ secure:
       - "/webjars/**"
       - "/actuator/**"
       - "/demo-oauth2-auth/oauth/token"
+      - "/demo-oauth2-auth/oauth/logout"
       - "/demo-oauth2-auth/oauth/token_key"
       - "/demo-oauth2-auth/rsa/publicKey"
       - "/demo-oauth2-auth/oauth/authorize"
       - "/test-api/api/login"
+      - "/test-api/static/**"
       - "/xxl-job-admin/**"
       - "/xxl-job-admin/static/*/*.js"
       - "/demo-job-admin/**"
+      - "/kefu-api/system/login"                      # kefu-api 登录相关接口
+      - "/kefu-api/system/login/getCaptcha"
+      - "/kefu-api/system/refreshToken"
+      - "/kefu-api/static/*/*.jpg"
+      - "/kefu-api/static/*.jpg"
 management: #SpringBoot Admin
   endpoints:
     web:

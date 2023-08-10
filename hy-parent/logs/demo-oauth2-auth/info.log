@@ -1,0 +1,174 @@
+09:42:05.008 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:42:06.508 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:42:08.045 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+09:42:08.045 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:42:08.045 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:42:08.153 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:42:08.325 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+09:44:33.694 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:44:35.160 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:44:36.529 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+09:44:36.533 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:44:36.533 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:44:36.637 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:44:36.788 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+09:46:54.616 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:46:56.080 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:46:57.448 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+09:46:57.449 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:46:57.449 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:46:57.554 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:46:57.702 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+09:53:51.256 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:53:52.722 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:53:54.111 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+09:53:54.111 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:53:54.111 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:53:54.219 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:53:57.050 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,51] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+09:53:59.006 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+09:53:59.034 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+09:54:00.198 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 10.591 seconds (JVM running for 11.309)
+09:54:00.605 [RMI TCP Connection(1)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+09:54:00.697 [RMI TCP Connection(3)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:54:00.880 [RMI TCP Connection(1)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+09:57:00.958 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+09:57:00.958 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+09:57:10.285 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+09:57:10.285 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+09:57:18.021 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:57:19.489 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:57:20.860 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+09:57:20.860 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:57:20.860 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:57:20.980 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:57:23.699 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,51] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+09:57:25.481 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+09:57:25.503 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+09:57:26.744 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 10.287 seconds (JVM running for 11.121)
+09:57:26.912 [RMI TCP Connection(3)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:57:26.920 [RMI TCP Connection(4)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+09:57:27.237 [RMI TCP Connection(4)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:07:31.509 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:07:31.509 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:07:37.985 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:07:37.989 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+10:07:45.128 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+10:07:46.707 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+10:07:48.278 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+10:07:48.278 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:07:48.278 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+10:07:48.390 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:07:51.337 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,51] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+10:07:53.210 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+10:07:53.234 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+10:07:54.498 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 11.18 seconds (JVM running for 12.415)
+10:07:54.850 [RMI TCP Connection(5)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:07:54.856 [RMI TCP Connection(6)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+10:07:55.131 [RMI TCP Connection(6)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:11:40.930 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:11:40.947 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:11:47.667 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:11:47.671 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+10:11:54.481 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+10:11:56.007 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+10:11:57.581 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+10:11:57.581 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:11:57.581 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+10:11:57.697 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:12:00.607 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+10:12:02.473 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+10:12:02.497 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+10:12:03.761 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 10.87 seconds (JVM running for 11.586)
+10:12:03.960 [RMI TCP Connection(3)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:12:03.964 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+10:12:04.258 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:17:43.880 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:17:43.880 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:17:53.113 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:17:53.113 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+10:17:59.433 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+10:18:00.951 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+10:18:02.505 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+10:18:02.505 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:18:02.505 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+10:18:02.622 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:18:05.544 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+10:18:07.398 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+10:18:07.424 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+10:18:08.685 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 10.796 seconds (JVM running for 11.437)
+10:18:09.109 [RMI TCP Connection(3)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:18:09.113 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+10:18:09.425 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:23:13.601 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:23:13.605 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:23:20.248 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:23:20.248 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+10:23:26.942 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+10:23:28.621 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+10:23:30.250 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+10:23:30.250 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:23:30.250 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+10:23:30.371 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:23:33.501 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+10:23:35.400 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+10:23:35.426 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+10:23:36.693 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 11.451 seconds (JVM running for 12.252)
+10:23:37.229 [RMI TCP Connection(11)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:23:37.237 [RMI TCP Connection(12)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+10:23:37.507 [RMI TCP Connection(12)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:25:51.977 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:25:51.977 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:25:59.820 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:25:59.820 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+10:26:06.444 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+10:26:08.076 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+10:26:09.637 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+10:26:09.637 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+10:26:09.637 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+10:26:09.749 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+10:26:12.685 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+10:26:14.550 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+10:26:14.573 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+10:26:15.851 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 11.122 seconds (JVM running for 11.891)
+10:26:16.301 [RMI TCP Connection(5)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+10:26:16.432 [RMI TCP Connection(7)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:26:16.503 [RMI TCP Connection(5)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+10:37:43.959 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+10:37:43.959 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+10:37:50.995 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+10:37:50.997 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+14:49:02.621 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+14:49:04.149 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+14:49:05.595 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+14:49:05.595 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+14:49:05.595 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+14:49:05.689 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+14:49:08.499 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+14:49:10.311 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+14:49:10.326 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+14:49:11.577 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 10.496 seconds (JVM running for 11.121)
+14:49:11.758 [RMI TCP Connection(1)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:49:11.883 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+14:49:12.167 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+16:02:24.808 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+16:02:24.810 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+16:02:31.236 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+16:02:31.239 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.
+16:11:24.348 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+16:11:25.886 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+16:11:27.890 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+16:11:27.891 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:11:27.891 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+16:11:28.004 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:11:30.937 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+16:11:32.766 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+16:11:32.791 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP demo-oauth2-auth 192.168.61.1:9401 register finished
+16:11:34.048 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 11.229 seconds (JVM running for 11.937)
+16:11:34.453 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+16:11:34.565 [RMI TCP Connection(5)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:11:34.733 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+16:29:25.155 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+16:29:25.157 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+16:29:34.359 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+16:29:34.360 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.

@@ -15,6 +15,10 @@
     <modules>
         <module>common-core</module>
         <module>common-swagger</module>
+        <module>common-mybatis-plus</module>
+        <module>common-web</module>
+        <module>common-file</module>
+        <module>common-redis</module>
     </modules>
 
 

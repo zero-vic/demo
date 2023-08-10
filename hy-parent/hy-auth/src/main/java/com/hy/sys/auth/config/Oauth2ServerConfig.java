@@ -2,9 +2,11 @@ package com.hy.sys.auth.config;
 
 import cn.hutool.http.HttpStatus;
 import cn.hutool.json.JSONUtil;
+import com.hy.sys.auth.filter.CustomClientCredentialsTokenEndpointFilter;
 import com.hy.sys.auth.service.UserServiceImpl;
 import com.hy.sys.common.result.CommonResult;
 import com.hy.sys.common.result.ResultCode;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
@@ -42,14 +45,13 @@ import java.util.List;
  */
 @Configuration
 @EnableAuthorizationServer
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
     private final UserServiceImpl userDetailsService;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenEnhancer jwtTokenEnhancer;
-    private final StringRedisTemplate stringRedisTemplate;
 
     private RedisConnectionFactory redisConnectionFactory;
 
@@ -65,7 +67,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 //指定客户端唯一id
                 .withClient("test-id")
                 //客户端密钥 后面改成配置文件加载
-                .secret(this.passwordEncoder.encode("123456"))
+                .secret(this.passwordEncoder.encode("12345611"))
                 .redirectUris("http://www.baidu.com") //配置redirect_uri，用于授权成功后跳转
                 // 定义客户端权限
                 .scopes("all")
@@ -76,6 +78,27 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 // refreshToken 过期时间
                 .refreshTokenValiditySeconds(3600*24*7);
         // .and().whthClient() 配置其他客户端授权
+
+    }
+    /**
+     *
+     * 令牌访问安全约束配置
+     **/
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        CustomClientCredentialsTokenEndpointFilter endpointFilter = new CustomClientCredentialsTokenEndpointFilter(security);
+        endpointFilter.afterPropertiesSet();
+        endpointFilter.setAuthenticationEntryPoint(authenticationEntryPoint());
+        security.addTokenEndpointAuthenticationFilter(endpointFilter);
+        security.authenticationEntryPoint(authenticationEntryPoint())
+                .allowFormAuthenticationForClients()
+                .tokenKeyAccess("permitAll()")
+                .checkTokenAccess("permitAll()");
+        //表单模式申请令牌，表示支持 client_id 和 client_secret 做登录认证
+//                security
+//                        .tokenKeyAccess("permitAll()") //对应/oauth/token_key 公开，获取公钥需要访问该端点
+//                        .checkTokenAccess("permitAll()") //对应/oauth/check_token ，路径公开，校验Token需要请求该端点
+//                        .allowFormAuthenticationForClients();
 
     }
 

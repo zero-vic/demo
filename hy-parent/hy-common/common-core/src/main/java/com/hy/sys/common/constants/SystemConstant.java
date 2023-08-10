@@ -14,7 +14,7 @@ public class SystemConstant {
 
     public final static String CLIENT_ID = "test-id";
 
-    public final static String CLIENT_SECRET = "123456";
+    public final static String CLIENT_SECRET = "12345611";
 
     public final static String GRANT_TYPE_PASSWORD = "password";
 

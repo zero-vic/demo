@@ -30,11 +30,16 @@
         <postgresql.version>42.5.1</postgresql.version>
         <mybatis-spring-boot-starter.version>2.3.0</mybatis-spring-boot-starter.version>
         <xxl-job.version>2.4.0</xxl-job.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
     </properties>
     <modules>
         <module>hy-auth</module>
         <module>hy-common</module>
         <module>hy-gateway</module>
+        <module>hy-entity</module>
+        <module>hy-service</module>
+        <module>hy-job</module>
+        <module>kefu-api</module>
     </modules>
     <dependencies>
         <!-- 监控检查-->
@@ -86,7 +91,7 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.3.0</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>

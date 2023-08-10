@@ -90,7 +90,7 @@
         <!--        spring security end-->
         <dependency>
             <groupId>com.hy.sys</groupId>
-            <artifactId>common-core</artifactId>
+            <artifactId>hy-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 <!--        <dependency>-->

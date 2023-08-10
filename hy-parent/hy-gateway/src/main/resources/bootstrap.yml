@@ -2,6 +2,6 @@ server:
   port: 8201
 spring:
   application:
-    name: demo-gateway
+    name: hy-gateway
   profiles:
     active: dev

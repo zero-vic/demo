@@ -6,6 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.hy.sys.common.constants.AuthConstant;
 import com.hy.sys.common.dto.UserJwtDto;
 import com.hy.sys.gateway.config.IgnoreUrlsConfig;
+import com.hy.sys.service.SysmenuService;
 import com.nimbusds.jose.JWSObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -21,7 +22,7 @@ import reactor.core.publisher.Mono;
 
 import java.net.URI;
 import java.text.ParseException;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -31,11 +32,11 @@ import java.util.List;
  **/
 @Component
 public class AuthorizationManager implements ReactiveAuthorizationManager<AuthorizationContext> {
-//    @Autowired
+    //    @Autowired
 //    private RedisTemplate<String, Object> redisTemplate;
     @Autowired
     private SysmenuService sysmenuService;
-//    private Map<String, List<String>> resourceRolesMap;
+    //    private Map<String, List<String>> resourceRolesMap;
     @Autowired
     private IgnoreUrlsConfig ignoreUrlsConfig;
 

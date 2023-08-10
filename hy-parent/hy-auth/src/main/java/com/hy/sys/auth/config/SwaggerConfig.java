@@ -1,5 +1,7 @@
 package com.hy.sys.auth.config;
 
+import com.hy.sys.common.config.BaseSwaggerConfig;
+import com.hy.sys.common.domain.SwaggerProperties;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,9 +17,9 @@ public class SwaggerConfig extends BaseSwaggerConfig {
     @Override
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
-                .apiBasePackage("com.hy.demo.auth.controller")
-                .title("demo认证中心")
-                .description("demo认证中心相关接口文档")
+                .apiBasePackage("com.hy.sys.auth.controller")
+                .title("hy认证中心")
+                .description("hy认证中心相关接口文档")
                 .contactName("yao")
                 .version("1.0")
                 .enableSecurity(true)

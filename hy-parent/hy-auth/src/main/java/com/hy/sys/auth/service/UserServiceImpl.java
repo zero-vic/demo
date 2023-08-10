@@ -3,6 +3,8 @@ package com.hy.sys.auth.service;
 import com.hy.sys.auth.entity.SecurityUser;
 import com.hy.sys.common.constants.MessageConstant;
 import com.hy.sys.common.dto.UserDto;
+import com.hy.sys.service.SyspersonsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.DisabledException;
@@ -10,6 +12,7 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * Created With IntelliJ IDEA
@@ -18,13 +21,16 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * Description:
  * Version:V1.0
  */
+@Service("userServiceImpl")
 public class UserServiceImpl implements UserDetailsService {
+
+    @Autowired
+    private SyspersonsService syspersonsService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-//        UserDto userDto = testUserService.loadUserByUsername(username);
-//        UserDto userDto = syspersonsService.loadUserByUsername(username);
-        UserDto userDto = new UserDto();
+        UserDto userDto = syspersonsService.loadUserByUsername(username);
         if (userDto == null) {
             throw new UsernameNotFoundException(MessageConstant.USERNAME_PASSWORD_ERROR);
         }
