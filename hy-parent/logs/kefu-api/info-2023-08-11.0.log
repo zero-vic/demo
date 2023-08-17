@@ -1,0 +1,96 @@
+08:30:40.609 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+08:30:42.785 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+08:30:46.332 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+08:30:46.332 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+08:30:46.332 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+08:30:46.492 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+08:30:53.101 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+08:30:53.313 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+08:30:54.813 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 16.275 seconds (JVM running for 19.762)
+08:30:54.938 [RMI TCP Connection(4)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:30:54.954 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+08:30:55.314 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+08:38:36.134 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+08:38:36.134 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+08:38:45.482 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+08:38:45.497 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.
+08:38:54.022 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+08:38:56.191 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+08:38:59.695 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+08:38:59.695 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+08:38:59.695 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+08:38:59.838 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+08:39:06.429 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+08:39:06.638 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+08:39:08.138 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 16.189 seconds (JVM running for 19.939)
+08:39:08.398 [RMI TCP Connection(3)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:39:08.412 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+08:39:08.808 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+08:45:14.863 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+08:45:14.865 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+08:45:24.168 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+08:45:24.171 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.
+08:45:34.875 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+08:45:37.077 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+08:45:40.569 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+08:45:40.569 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+08:45:40.569 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+08:45:40.714 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+08:45:47.239 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+08:45:47.432 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+08:45:48.914 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 16.151 seconds (JVM running for 19.792)
+08:45:49.085 [RMI TCP Connection(1)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:45:49.097 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+08:45:49.498 [RMI TCP Connection(2)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+08:50:01.247 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+08:50:01.247 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+08:50:10.608 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+08:50:10.610 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.
+08:50:20.991 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+08:50:23.139 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+08:50:26.784 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+08:50:26.784 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+08:50:26.784 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+08:50:26.944 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+08:50:33.538 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+08:50:33.745 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+08:50:35.236 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 16.37 seconds (JVM running for 20.165)
+08:50:35.673 [RMI TCP Connection(2)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:50:35.682 [RMI TCP Connection(1)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+08:50:36.072 [RMI TCP Connection(1)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+08:54:10.643 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+08:54:10.645 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+08:54:16.894 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+08:54:16.894 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.
+09:56:38.683 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+09:56:40.868 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+09:56:44.540 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+09:56:44.540 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:56:44.540 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+09:56:44.692 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:56:51.340 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+09:56:51.547 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+09:56:53.035 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 16.509 seconds (JVM running for 20.17)
+09:56:53.421 [RMI TCP Connection(2)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:56:53.421 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+09:56:53.776 [RMI TCP Connection(3)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+15:14:12.835 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+15:14:12.838 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+15:14:20.072 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+15:14:20.074 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.
+17:59:21.484 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+17:59:23.184 [main] INFO  c.h.s.k.KefuApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+17:59:25.972 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8082"]
+17:59:25.973 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+17:59:25.973 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+17:59:26.090 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+17:59:32.095 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8082"]
+17:59:32.136 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP kefu-api 192.168.61.1:8082 register finished
+17:59:33.785 [main] INFO  c.h.s.k.KefuApplication - [logStarted,61] - Started KefuApplication in 14.52 seconds (JVM running for 18.611)
+17:59:34.430 [RMI TCP Connection(6)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:59:34.437 [RMI TCP Connection(7)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPKEFU - Starting...
+17:59:34.741 [RMI TCP Connection(7)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPKEFU - Start completed.
+18:03:05.393 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+18:03:05.397 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+18:03:13.779 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPKEFU - Shutdown initiated...
+18:03:13.782 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPKEFU - Shutdown completed.

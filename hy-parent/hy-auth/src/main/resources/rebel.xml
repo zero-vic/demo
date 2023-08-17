@@ -6,29 +6,31 @@
 -->
 <application generated-by="maven" build-tool-version="3.8.1" plugin-version="1.1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_2.xsd">
 	<classpath>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-auth/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-auth/target/classes">
 			<include name="application-dev.yml"/>
 			<include name="bootstrap.yml"/>
 			<include name="logback-spring.xml"/>
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-auth/src/main/resources">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-auth/src/main/resources">
 			<include name="**/*.jks"/>
 			<include name="static/**"/>
 			<include name="assets/**"/>
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-auth/src/main/java">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-auth/src/main/java">
 			<include name="**/*.xml"/>
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-auth/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-auth/target/classes">
 		</dir>
 
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-common/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-common/common-core/target/classes">
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-entity/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-common/common-mybatis-plus/target/classes">
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-service/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-common/common-redis/target/classes">
 		</dir>
-		<dir name="F:/IDEA-PROJECT/demo-parent/demo-web-common/target/classes">
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-entity/target/classes">
+		</dir>
+		<dir name="F:/IDEA-PROJECT/hy-parent/hy-service/target/classes">
 		</dir>
 	</classpath>
 

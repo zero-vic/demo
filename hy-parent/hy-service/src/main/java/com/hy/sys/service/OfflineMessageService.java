@@ -13,9 +13,9 @@ import java.util.Set;
  */
 public interface OfflineMessageService {
 
-    List<JSONObject> getOfflineMessage(String siteId, String conversationId, Long lastSeq, Integer maxLimit);
+    List<JSONObject> getOfflineMessage(String conversationId, Long lastSeq, Integer maxLimit);
 
-    Set getOfflineMessageByNum(String siteId, String conversationId,long num);
+    Set getOfflineMessageByNum( String conversationId,long num);
 
-    Long getUnreadMsgCount(String siteId,String conversationId);
+    Long getUnreadMsgCount(String conversationId);
 }

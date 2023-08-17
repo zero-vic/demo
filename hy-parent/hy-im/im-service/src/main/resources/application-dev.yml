@@ -1,0 +1,65 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: 123456
+    url: jdbc:postgresql://10.32.128.113:5432/ssm
+    username: postgres
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 100
+        max-wait: 1000
+        min-idle: 10
+    password:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    addresses: localhost
+    username: guest
+    password: guest
+    #    virtual-host:
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        acknowledge-mode: MANUAL
+        prefetch: 1
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+    cache:
+      connection:
+        mode: channel
+      channel:
+        size: 36
+        checkout-timeout: 0
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false # 关闭驼峰命名规则
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml # 编写复杂的sql 语句 ，mybatis-plus 对多表关联支持性差。手写xml文件{sql语句}
+
+appConfig:
+  appId: 10000
+  privateKey: 123456
+  zkAddr: 127.0.0.1:2181 # zk连接地址
+  zkConnectTimeOut: 50000 #zk超时时间
+  imRouteWay: 3 # 路由策略1随机 2轮训 3hash
+  consistentHashWay: 1 # 如果选用一致性hash的话具体hash算法 1 TreeMap 2 自定义Map
+  tcpPort: 9000 # tcp端口
+  webSocketPort: 19000 # webSocket端口
+  needWebSocket: true #是否需要开启webSocket
+  loginModel: 1
+  messageRecallTimeOut: 1200000000 #消息可撤回时间，单位毫秒
+    #  *                多端同步模式：1 只允许一端在线，手机/电脑/web 踢掉除了本client+imel的设备
+    #  *                            2 允许手机/电脑的一台设备 + web在线 踢掉除了本client+imel的非web端设备
+    #  *                            3 允许手机和电脑单设备 + web 同时在线 踢掉非本client+imel的同端设备
+    #  *                            4 允许所有端多设备登录 不踢任何设备
+  groupMaxMemberCount: 500
+  offlineMessageCount: 1000 #离线消息存储条数
+  deleteConversationSyncMode: 1 #1多段同步

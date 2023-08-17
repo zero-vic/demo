@@ -15,6 +15,7 @@ import com.hy.sys.service.SyspersonsService;
 import com.hy.sys.service.impl.AsyncSyslogService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -23,10 +24,14 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.DefaultParameterNameDiscoverer;
+import org.springframework.expression.EvaluationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
-
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.time.LocalDateTime;
@@ -91,6 +96,7 @@ public class SysLogAspect {
             syslog.setType(sysLog.type().getCode());
             syslog.setModel(sysLog.model());
             syslog.setServices(serverName);
+
             // 登录单独处理
             if(sysLog.type() == BusinessType.LOGIN){
                 if(((CommonResult) jsonObject).getCode() == 200){
@@ -106,16 +112,17 @@ public class SysLogAspect {
                     return;
                 }
             }
-
-            // todo 生成规则确认后再修改
-            syslog.setContents("contents");
+            String contents =  generateKeyBySpEL(sysLog.contents(), (ProceedingJoinPoint) joinPoint);
+            syslog.setContents(contents);
             asyncSyslogService.insert(syslog);
         } catch (Exception ex) {
-            log.error("系统日志异常信息：{}",ex.getMessage());
+            log.error("系统日志异常信息：{}",ex.getMessage(),ex);
         }
 
 
     }
+
+
 
     /**
      * 获取注解
@@ -177,6 +184,24 @@ public class SysLogAspect {
         }
         return syslog;
     }
+
+
+    private SpelExpressionParser parserSpel = new SpelExpressionParser();
+    private DefaultParameterNameDiscoverer parameterNameDiscoverer= new DefaultParameterNameDiscoverer();
+
+    public String generateKeyBySpEL(String key, ProceedingJoinPoint pjp) {
+        Expression expression = parserSpel.parseExpression(key);
+        EvaluationContext context = new StandardEvaluationContext();
+        MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
+        Object[] args = pjp.getArgs();
+        String[] paramNames = parameterNameDiscoverer.getParameterNames(methodSignature.getMethod());
+        for (int i = 0; i < args.length; i++) {
+            context.setVariable(paramNames[i], args[i]);
+        }
+        return expression.getValue(context).toString();
+    }
+
+
 
 
 }

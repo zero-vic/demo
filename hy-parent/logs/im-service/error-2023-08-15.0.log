@@ -1,0 +1,18 @@
+10:54:05.738 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field syslogMapper in com.hy.sys.service.impl.AsyncSyslogService required a bean of type 'com.hy.sys.mapper.SyslogMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.hy.sys.mapper.SyslogMapper' in your configuration.
+

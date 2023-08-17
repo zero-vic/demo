@@ -13,4 +13,6 @@ public interface ProconversationService extends IService<Proconversation> {
      * @return
      */
     List<Proconversation> getConversationList(String siteId,String postId);
+
+//    long  getGroupConversationCount(String groupId,String postId);
 }

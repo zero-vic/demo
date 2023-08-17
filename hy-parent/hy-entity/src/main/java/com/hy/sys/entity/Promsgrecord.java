@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -58,18 +58,18 @@ public class Promsgrecord implements Serializable {
      * 发送时间
      */
     @TableField("sendtime")
-    private Date sendtime;
+    private LocalDateTime sendtime;
 
     /**
      * 删除标识
      */
     @TableField("isdel")
-    private Short isdel;
+    private Integer isdel;
 
     /**
      * 消息类型 1文本 2图片 
      */
     @TableField("msgtype")
-    private Short msgtype;
+    private Integer msgtype;
 
 }

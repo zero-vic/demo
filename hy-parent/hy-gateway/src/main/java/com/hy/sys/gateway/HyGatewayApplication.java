@@ -14,7 +14,13 @@ public class HyGatewayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HyGatewayApplication.class, args);
-        log.info("=======网关启动完成========");
+        log.info("\n" +
+                "  _  ___   __    ___   _ _____ _____      _____   __\n" +
+                " | || \\ \\ / /__ / __| /_\\_   _| __\\ \\    / /_\\ \\ / /\n" +
+                " | __ |\\ V /___| (_ |/ _ \\| | | _| \\ \\/\\/ / _ \\ V / \n" +
+                " |_||_| |_|     \\___/_/ \\_\\_| |___| \\_/\\_/_/ \\_\\_|  \n" +
+                "                                                    ");
+        log.info("gateway启动完成");
     }
 
 }

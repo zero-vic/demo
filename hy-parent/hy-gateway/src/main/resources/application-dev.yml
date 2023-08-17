@@ -84,7 +84,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://localhost:8201/demo-oauth2-auth/rsa/publicKey' #??RSA???????
+          jwk-set-uri: 'http://localhost:8201/hy-oauth2-auth/rsa/publicKey' #??RSA???????
   #  application:
   #    name: demo-gateway
   redis:
@@ -105,13 +105,11 @@ secure:
       - "/*/*.ico"
       - "/webjars/**"
       - "/actuator/**"
-      - "/demo-oauth2-auth/oauth/token"
-      - "/demo-oauth2-auth/oauth/logout"
-      - "/demo-oauth2-auth/oauth/token_key"
-      - "/demo-oauth2-auth/rsa/publicKey"
-      - "/demo-oauth2-auth/oauth/authorize"
-      - "/test-api/api/login"
-      - "/test-api/static/**"
+      - "/hy-oauth2-auth/oauth/token"
+      - "/hy-oauth2-auth/oauth/logout"
+      - "/hy-oauth2-auth/oauth/token_key"
+      - "/hy-oauth2-auth/rsa/publicKey"
+      - "/hy-oauth2-auth/oauth/authorize"
       - "/xxl-job-admin/**"
       - "/xxl-job-admin/static/*/*.js"
       - "/demo-job-admin/**"

@@ -11,19 +11,16 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>common-file</name>
     <description>common-file</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.hy.sys</groupId>
-            <artifactId>hy-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.hy.sys</groupId>
             <artifactId>common-web</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

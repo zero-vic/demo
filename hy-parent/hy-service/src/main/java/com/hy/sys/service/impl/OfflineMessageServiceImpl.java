@@ -28,14 +28,14 @@ public class OfflineMessageServiceImpl implements OfflineMessageService {
 
 
     @Override
-    public List<JSONObject> getOfflineMessage(String siteId, String conversationId, Long lastSeq, Integer maxLimit) {
-        String key = siteId +":offlineMessage:"+conversationId;
+    public List<JSONObject> getOfflineMessage(String conversationId, Long lastSeq, Integer maxLimit) {
+        String key = "offlineMessage:" + conversationId;
         //获取最大的seq
         Long maxSeq = 0L;
         ZSetOperations zSetOperations = redisTemplate.opsForZSet();
         // 获取最大的score
         Set set = zSetOperations.reverseRangeWithScores(key, 0, 0);
-        if(!CollectionUtils.isEmpty(set)){
+        if (!CollectionUtils.isEmpty(set)) {
             List list = new ArrayList(set);
             DefaultTypedTuple o = (DefaultTypedTuple) list.get(0);
             maxSeq = o.getScore().longValue();
@@ -48,41 +48,42 @@ public class OfflineMessageServiceImpl implements OfflineMessageService {
             String value = typedTuple.getValue();
 //            MessageOffline offlineMessageContent = JSONObject.parseObject(value, MessageOffline.class);
             JSONObject jsonObject = JSONUtil.parseObj(value);
-             msgList.add(jsonObject);
+            msgList.add(jsonObject);
         }
         return msgList;
     }
+
     // 拉去最新的num条数据
-    public Set getOfflineMessageByNum(String siteId, String conversationId,long num){
-        if(num == 0) {
+    public Set getOfflineMessageByNum(String conversationId, long num) {
+        if (num == 0) {
             return null;
         }
-        String key = siteId +":offlineMessage:"+conversationId;
-        Set set = redisTemplate.opsForZSet().reverseRange(key, 0, num-1);
+        String key = "offlineMessage:" + conversationId;
+        Set set = redisTemplate.opsForZSet().reverseRange(key, 0, num - 1);
         return set;
 
     }
 
     @Override
-    public Long getUnreadMsgCount(String siteId,String conversationId) {
-        String key = siteId +":offlineMessage:"+conversationId;
+    public Long getUnreadMsgCount(String conversationId) {
+        String key = "offlineMessage:" + conversationId;
         // 获取最大的seq
         Long maxSeq = 0L;
         ZSetOperations zSetOperations = redisTemplate.opsForZSet();
         // 获取最大的score
         Set set = zSetOperations.reverseRangeWithScores(key, 0, 0);
-        if(!CollectionUtils.isEmpty(set)){
+        if (!CollectionUtils.isEmpty(set)) {
             List list = new ArrayList(set);
             DefaultTypedTuple o = (DefaultTypedTuple) list.get(0);
             maxSeq = o.getScore().longValue();
         }
-        String readedKey = siteId + ":readedSeq:"+conversationId;
+        String readedKey = "readedSeq:" + conversationId;
         Long readedSeq = 0L;
-        if(redisTemplate.opsForValue().get(readedKey)!=null){
-            readedSeq = Long.parseLong(redisTemplate.opsForValue().get(readedKey).toString()) ;
+        if (redisTemplate.opsForValue().get(readedKey) != null) {
+            readedSeq = Long.parseLong(redisTemplate.opsForValue().get(readedKey).toString());
         }
         Long count = zSetOperations.count(key, readedSeq, maxSeq);
-        return count-1<0?0:count-1;
+        return count - 1 < 0 ? 0 : count - 1;
     }
 
 

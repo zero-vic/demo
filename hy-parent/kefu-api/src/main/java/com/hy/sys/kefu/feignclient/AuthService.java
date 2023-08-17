@@ -14,7 +14,7 @@ import java.util.Map;
  *  yao create 2023年06月09日
  *  version: 1.0
  */
-@FeignClient("demo-oauth2-auth")
+@FeignClient("hy-oauth2-auth")
 public interface AuthService {
 
     @PostMapping(value = "/oauth/token")

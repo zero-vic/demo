@@ -1,0 +1,392 @@
+16:41:37.460 [main] ERROR o.s.b.w.e.t.TomcatStarter - [onStartup,61] - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcMetricsFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcMetricsFilter' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'simpleMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/simple/SimpleMetricsExportAutoConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourcePoolMetadataMeterBinder' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/jdbc/DataSourcePoolMetricsAutoConfiguration$DataSourcePoolMetadataMetricsConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourcePoolMetadataMeterBinder' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+16:41:37.509 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles dev are currently active).
+
+16:42:21.910 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.<clinit>(AddressResolverGroupProvider.java:58)
+
+The following method did not exist:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder.socketChannelType(Ljava/lang/Class;)Lio/netty/resolver/dns/DnsNameResolverBuilder;
+
+The calling method's class, io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper, was loaded from the following location:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/lettuce/lettuce-core/6.1.8.RELEASE/lettuce-core-6.1.8.RELEASE.jar!/io/lettuce/core/resource/AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.class
+
+The called method's class, io.netty.resolver.dns.DnsNameResolverBuilder, is available from the following locations:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-resolver-dns/4.1.35.Final/netty-resolver-dns-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder: file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper and io.netty.resolver.dns.DnsNameResolverBuilder
+
+16:43:08.311 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.<clinit>(AddressResolverGroupProvider.java:58)
+
+The following method did not exist:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder.socketChannelType(Ljava/lang/Class;)Lio/netty/resolver/dns/DnsNameResolverBuilder;
+
+The calling method's class, io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper, was loaded from the following location:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/lettuce/lettuce-core/6.1.8.RELEASE/lettuce-core-6.1.8.RELEASE.jar!/io/lettuce/core/resource/AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.class
+
+The called method's class, io.netty.resolver.dns.DnsNameResolverBuilder, is available from the following locations:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-resolver-dns/4.1.35.Final/netty-resolver-dns-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder: file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper and io.netty.resolver.dns.DnsNameResolverBuilder
+
+16:44:56.752 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.<clinit>(AddressResolverGroupProvider.java:58)
+
+The following method did not exist:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder.socketChannelType(Ljava/lang/Class;)Lio/netty/resolver/dns/DnsNameResolverBuilder;
+
+The calling method's class, io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper, was loaded from the following location:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/lettuce/lettuce-core/6.1.8.RELEASE/lettuce-core-6.1.8.RELEASE.jar!/io/lettuce/core/resource/AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.class
+
+The called method's class, io.netty.resolver.dns.DnsNameResolverBuilder, is available from the following locations:
+
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+    jar:file:/C:/Users/Administrator/.m2/repository/io/netty/netty-resolver-dns/4.1.35.Final/netty-resolver-dns-4.1.35.Final.jar!/io/netty/resolver/dns/DnsNameResolverBuilder.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    io.netty.resolver.dns.DnsNameResolverBuilder: file:/C:/Users/Administrator/.m2/repository/io/netty/netty-all/4.1.35.Final/netty-all-4.1.35.Final.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper and io.netty.resolver.dns.DnsNameResolverBuilder
+
+16:46:58.089 [main] ERROR o.s.b.SpringApplication - [reportFailure,824] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nettyServerHandler': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/2084559714.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.hy.im.server.ImServerApplication.main(ImServerApplication.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/2084559714.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 34 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:158)
+	at org.redisson.connection.pool.ConnectionPool$1$$Lambda$332/1679002380.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/78377968.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:476)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:328)
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:294)
+	at org.redisson.connection.pool.ConnectionPool$$Lambda$331/1326998608.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/78377968.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:495)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:474)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.client.RedisClient$2$2.run(RedisClient.java:251)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:405)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 127.0.0.1/127.0.0.1:6379
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:670)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:617)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:534)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	... 4 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	... 12 common frames omitted
+16:48:31.010 [main] ERROR o.s.b.SpringApplication - [reportFailure,824] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nettyServerHandler': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/2084559714.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.hy.im.server.ImServerApplication.main(ImServerApplication.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/2084559714.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 34 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:158)
+	at org.redisson.connection.pool.ConnectionPool$1$$Lambda$332/524566446.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/2029709919.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:476)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:328)
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:294)
+	at org.redisson.connection.pool.ConnectionPool$$Lambda$331/1679002380.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/2029709919.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:495)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:474)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.client.RedisClient$3$2.run(RedisClient.java:312)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:405)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 127.0.0.1/127.0.0.1:6379
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:670)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:617)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:534)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	... 4 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	... 12 common frames omitted
+16:50:33.818 [main] ERROR o.s.b.SpringApplication - [reportFailure,824] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'nettyServerHandler': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/583015088.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.hy.im.server.ImServerApplication.main(ImServerApplication.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/hy/im/server/config/RedissonConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$198/583015088.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 34 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: 127.0.0.1/127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:158)
+	at org.redisson.connection.pool.ConnectionPool$1$$Lambda$332/1268786037.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/480230241.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:476)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:328)
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:294)
+	at org.redisson.connection.pool.ConnectionPool$$Lambda$331/27313641.accept(Unknown Source)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at org.redisson.misc.RedissonPromise$$Lambda$323/480230241.operationComplete(Unknown Source)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:502)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:495)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:474)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:415)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:540)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:533)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:114)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.client.RedisClient$3$2.run(RedisClient.java:312)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:405)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 127.0.0.1/127.0.0.1:6379
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:670)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:617)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:534)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	... 4 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	... 12 common frames omitted
+17:37:36.031 [nioEventLoopGroup-8-3] ERROR c.h.i.s.p.MqMessageProducer - [sendMessage,64] - 发送消息出现异常：null
+17:44:57.524 [nioEventLoopGroup-8-3] ERROR c.h.i.s.p.MqMessageProducer - [sendMessage,64] - 发送消息出现异常：null

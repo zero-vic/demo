@@ -24,4 +24,9 @@ public @interface SysLog {
      */
     BusinessType type() default BusinessType.OTHER;
 
+    /**
+     * 日志内容
+     */
+    String contents() default "";
+
 }

@@ -81,7 +81,7 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
                 return Mono.just(new AuthorizationDecision(true));
             }
 
-            if (AuthConstant.ADMIN_CLIENT_ID.equals(userJwtDto.getClientId()) && !pathMatcher.match(AuthConstant.ADMIN_URL_PATTERN, uri.getPath())) {
+            if (AuthConstant.ADMIN_CLIENT_ID.equals(userJwtDto.getClient_id()) && !pathMatcher.match(AuthConstant.ADMIN_URL_PATTERN, uri.getPath())) {
                 return Mono.just(new AuthorizationDecision(false));
             }
             // 访问路径是否有权限

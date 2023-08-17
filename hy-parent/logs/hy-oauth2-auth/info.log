@@ -1,0 +1,17 @@
+11:03:25.442 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.3.Final
+11:03:26.917 [main] INFO  c.h.s.a.HyAuthApplication - [logStartupProfileInfo,640] - The following 1 profile is active: "dev"
+11:03:29.200 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9401"]
+11:03:29.200 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+11:03:29.200 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.63]
+11:03:29.312 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+11:03:32.219 [main] INFO  c.h.s.a.c.WebSecurityConfig - [configure,52] - whitelist path:["/webjars/**","/doc.html","/swagger-resources/**","/v2/api-docs","/rsa/publicKey","/oauth/**"]
+11:03:34.203 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9401"]
+11:03:34.238 [main] INFO  c.a.c.n.r.NacosServiceRegistry - [register,75] - nacos registry, DEFAULT_GROUP hy-oauth2-auth 192.168.61.1:9401 register finished
+11:03:35.506 [main] INFO  c.h.s.a.HyAuthApplication - [logStarted,61] - Started HyAuthApplication in 11.721 seconds (JVM running for 12.831)
+11:03:35.874 [RMI TCP Connection(5)-10.32.128.102] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:03:35.883 [RMI TCP Connection(4)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariCPAuth - Starting...
+11:03:36.160 [RMI TCP Connection(4)-10.32.128.102] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariCPAuth - Start completed.
+18:10:26.829 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,94] - De-registering from Nacos Server now...
+18:10:26.833 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - [deregister,114] - De-registration finished.
+18:10:34.370 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,350] - HikariCPAuth - Shutdown initiated...
+18:10:34.373 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - [close,352] - HikariCPAuth - Shutdown completed.

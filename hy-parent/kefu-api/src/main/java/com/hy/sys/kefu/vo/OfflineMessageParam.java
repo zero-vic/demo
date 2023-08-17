@@ -11,7 +11,6 @@ import lombok.Data;
 @Data
 public class OfflineMessageParam {
 
-    private String siteId;
 
     private String conversationId;
 

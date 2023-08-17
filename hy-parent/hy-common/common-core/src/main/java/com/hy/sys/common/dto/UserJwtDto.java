@@ -2,6 +2,8 @@ package com.hy.sys.common.dto;
 
 
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,18 +13,19 @@ import java.util.List;
  * @Date 2023/5/24 17:58
  **/
 
+@Data
 public class UserJwtDto implements Serializable {
 
     private String id;
     /**
      * 用户名
      */
-    private String username;
+    private String user_name;
 
     /**
      * client_id
      */
-    private String clientId;
+    private String client_id;
     /**
      * 角色ID
      **/
@@ -35,71 +38,17 @@ public class UserJwtDto implements Serializable {
      * 角色类型
      **/
     private String roletype;
+    /**
+     * jti
+     */
+    private String jti;
+    /**
+     * 过期时间
+     */
+    private Long exp;
+
+    private List<String> scope;
+
     private List<String> authorities;
 
-    public UserJwtDto(String id, String username, String clientId, String roleid, String unitid, String roletype, List<String> authorities) {
-        this.id = id;
-        this.username = username;
-        this.clientId = clientId;
-        this.roleid = roleid;
-        this.unitid = unitid;
-        this.roletype = roletype;
-        this.authorities = authorities;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getRoleid() {
-        return roleid;
-    }
-
-    public void setRoleid(String roleid) {
-        this.roleid = roleid;
-    }
-
-    public String getUnitid() {
-        return unitid;
-    }
-
-    public void setUnitid(String unitid) {
-        this.unitid = unitid;
-    }
-
-    public String getRoletype() {
-        return roletype;
-    }
-
-    public void setRoletype(String roletype) {
-        this.roletype = roletype;
-    }
-
-    public List<String> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<String> authorities) {
-        this.authorities = authorities;
-    }
 }

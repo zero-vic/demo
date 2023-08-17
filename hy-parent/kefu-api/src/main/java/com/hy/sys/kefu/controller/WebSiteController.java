@@ -1,6 +1,7 @@
 package com.hy.sys.kefu.controller;
 
 import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -21,6 +22,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +40,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("system")
-@Api(value = "站点管理接口",tags = {"WebSiteController"})
+@Api(value = "站点管理接口", tags = {"WebSiteController"})
 public class WebSiteController {
 
     @Autowired
@@ -56,35 +58,39 @@ public class WebSiteController {
     @Autowired
     private SyspersonsService syspersonsService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     /**
      * 获取站点列表
+     *
      * @param pageParam
      * @return
      */
     @ApiOperation(value = "获取站点列表接口")
     @PostMapping("website/GetListPage")
-    public CommonResult getWebSiteList(PageParam pageParam){
+    public CommonResult getWebSiteList(PageParam pageParam) {
         IPage<Prowebsite> page = new Page<>(pageParam.getPage(), pageParam.getLimit());
 
         QueryWrapper<Prowebsite> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("ws.isdel", DelFlagEnum.NORMAL.getCode());
-        if(StringUtils.isNotBlank(pageParam.getCondition())){
-            queryWrapper.like("ws.name",pageParam.getCondition());
+        if (StringUtils.isNotBlank(pageParam.getCondition())) {
+            queryWrapper.like("ws.name", pageParam.getCondition());
         }
-        IPage<Prowebsite> iPage = prowebsiteService.getListPage(page,queryWrapper);
+        IPage<Prowebsite> iPage = prowebsiteService.getListPage(page, queryWrapper);
         return CommonResult.success(new CommonPage<>(iPage));
     }
 
     @ApiOperation(value = "新增站点接口")
     @PostMapping("website/add")
-    public CommonResult addWebSite(@Valid ProwebsiteParam prowebsiteParam){
+    public CommonResult addWebSite(@Valid ProwebsiteParam prowebsiteParam) {
 
         Prowebsite prowebsite = new Prowebsite();
-        BeanUtils.copyProperties(prowebsiteParam,prowebsite);
+        BeanUtils.copyProperties(prowebsiteParam, prowebsite);
         prowebsite.setTid(UUID.randomUUID().toString());
         prowebsite.setIsdel(DelFlagEnum.NORMAL.getCode());
         boolean save = prowebsiteService.save(prowebsite);
-        if(!save){
+        if (!save) {
             return CommonResult.failed(ErrorMsgConstant.ADD_ERROR);
         }
         return CommonResult.success();
@@ -93,9 +99,9 @@ public class WebSiteController {
 
     @ApiOperation(value = "获取站点详情接口")
     @ApiImplicitParams(
-            {@ApiImplicitParam(name = "id",value = "用户id",paramType = "query",required = true,dataType = "String",dataTypeClass = String.class),})
+            {@ApiImplicitParam(name = "id", value = "用户id", paramType = "query", required = true, dataType = "String", dataTypeClass = String.class),})
     @PostMapping("website/Details")
-    public CommonResult getWebSiteDetail(String id){
+    public CommonResult getWebSiteDetail(String id) {
         Prowebsite prowebsite = prowebsiteService.getWebsiteById(id);
         return CommonResult.success(prowebsite);
     }
@@ -103,11 +109,11 @@ public class WebSiteController {
 
     @ApiOperation(value = "更新站点接口")
     @PostMapping("website/update")
-    public CommonResult updateWebSite(@Valid ProwebsiteParam prowebsiteParam){
+    public CommonResult updateWebSite(@Valid ProwebsiteParam prowebsiteParam) {
         Prowebsite prowebsite = new Prowebsite();
-        BeanUtils.copyProperties(prowebsiteParam,prowebsite);
+        BeanUtils.copyProperties(prowebsiteParam, prowebsite);
         boolean b = prowebsiteService.updateById(prowebsite);
-        if(!b){
+        if (!b) {
             return CommonResult.failed(ErrorMsgConstant.UPDATE_ERROR);
         }
         return CommonResult.success();
@@ -116,13 +122,13 @@ public class WebSiteController {
 
     @ApiOperation(value = "删除站点接口")
     @ApiImplicitParams(
-            {@ApiImplicitParam(name = "id",value = "站点id",required = true,paramType = "query",dataType = "String",dataTypeClass = String.class),})
+            {@ApiImplicitParam(name = "id", value = "站点id", required = true, paramType = "query", dataType = "String", dataTypeClass = String.class),})
     @PostMapping("website/Delete")
-    public CommonResult deleteWebSite(String id){
+    public CommonResult deleteWebSite(String id) {
         Prowebsite prowebsite = prowebsiteService.getById(id);
-        if(prowebsite!=null){
+        if (prowebsite != null) {
             prowebsite.setIsdel(DelFlagEnum.DELETE.getCode());
-        }else {
+        } else {
             return CommonResult.failed(ErrorMsgConstant.NO_DATA_ERROR);
         }
         prowebsiteService.updateById(prowebsite);
@@ -131,38 +137,40 @@ public class WebSiteController {
 
     /**
      * 获取客服数据 用于编辑回显
+     *
      * @param id
      * @return
      */
     @PostMapping("website/getPersonData")
-    public CommonResult getPersonData(String id){
+    public CommonResult getPersonData(String id) {
         Prowebsite prowebsite = prowebsiteService.getById(id);
-        if(prowebsite == null){
+        if (prowebsite == null) {
             return CommonResult.failed(ErrorMsgConstant.NO_DATA_ERROR);
         }
         List<TransferDto> allData = new ArrayList<>();
         List<String> allocatedData = new ArrayList<>();
-        if(!StringUtils.isBlank(prowebsite.getUnitid())){
+        if (!StringUtils.isBlank(prowebsite.getUnitid())) {
             allData = syspersonsService.getUserByUnitId(prowebsite.getUnitid());
             String[] split = prowebsite.getPersonids().split(",");
             allocatedData = Arrays.asList(split);
 
 
         }
-        Map<String,Object> map  = new HashMap<>(2);
-        map.put("allData",allData);
-        map.put("allocatedData",allocatedData);
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("allData", allData);
+        map.put("allocatedData", allocatedData);
         return CommonResult.success(map);
     }
 
 
     /**
      * 获取历史消息记录
+     *
      * @param msgRecordParam
      * @return
      */
     @PostMapping("msg/GetRecordListPage")
-    public CommonResult getMsgRecordList(MsgRecordParam msgRecordParam){
+    public CommonResult getMsgRecordList(MsgRecordParam msgRecordParam) {
         IPage<Promsgrecord> msgRecordList = promsgrecordService.getMsgRecordList(msgRecordParam.getSiteId(),
                 msgRecordParam.getPostId(), msgRecordParam.getReceiveId(),
                 msgRecordParam.getPageNum(), msgRecordParam.getPageSize());
@@ -171,36 +179,36 @@ public class WebSiteController {
 
     /**
      * 获取会话列表
+     *
      * @param siteId
      * @param postId
      * @return
      */
     @PostMapping("conversion/GetList")
-    public CommonResult getConversionList(String siteId,String postId){
-        List<Proconversation> conversationList = proconversationService.getConversationList(siteId, postId);
-        if(CollectionUtils.isEmpty(conversationList)){
+    public CommonResult getConversionList(String siteId, String postId) {
+        String key = "conversationList:" + postId;
+        Map<Object, Object> map = stringRedisTemplate.opsForHash().entries(key);
+        if (CollectionUtils.isEmpty(map)) {
             return CommonResult.success(null);
         }
-        List<ConversationVo> list = conversationList.stream().map(item -> {
-            ConversationVo conversationVo = new ConversationVo();
-            BeanUtils.copyProperties(item, conversationVo);
-            String conversationId = item.getType() + "_" + item.getPostid() + "_" + item.getReceiveid();
-            Long unreadMsgCount = offlineMessageService.getUnreadMsgCount(item.getSiteid(), conversationId);
+        List<Object> collect = map.entrySet().stream().map(item -> {
+            ConversationVo conversationVo = JSONUtil.toBean(item.getValue().toString(), ConversationVo.class);
+            Long unreadMsgCount = offlineMessageService.getUnreadMsgCount(String.valueOf(item.getKey()));
             conversationVo.setUnreadCount(unreadMsgCount);
             return conversationVo;
         }).collect(Collectors.toList());
-
-        return CommonResult.success(list);
+        return CommonResult.success(collect);
     }
 
     /**
      * 获取离线聊天记录
+     *
      * @param offlineMessageParam
      * @return
      */
     @PostMapping("msg/GetList")
-    public CommonResult getOfflineMessage(OfflineMessageParam offlineMessageParam){
-        List<JSONObject> list = offlineMessageService.getOfflineMessage(offlineMessageParam.getSiteId(),
+    public CommonResult getOfflineMessage(OfflineMessageParam offlineMessageParam) {
+        List<JSONObject> list = offlineMessageService.getOfflineMessage(
                 offlineMessageParam.getConversationId(), offlineMessageParam.getLastSequence(),
                 offlineMessageParam.getMaxLimit());
 
@@ -209,28 +217,29 @@ public class WebSiteController {
 
     /**
      * 获取离线聊天记录
+     *
      * @param offlineMessageParam
      * @param num
      * @return
      */
     @PostMapping("msg/GetNewList")
-    public CommonResult getOfflineMessageByNum(OfflineMessageParam offlineMessageParam,long num){
-        Set set = offlineMessageService.getOfflineMessageByNum(offlineMessageParam.getSiteId(), offlineMessageParam.getConversationId(), num);
+    public CommonResult getOfflineMessageByNum(OfflineMessageParam offlineMessageParam, long num) {
+        Set set = offlineMessageService.getOfflineMessageByNum(offlineMessageParam.getConversationId(), num);
         return CommonResult.success(set);
     }
 
     /**
      * 获取未读消息条数
+     *
      * @param siteId
      * @param conversationId
      * @return
      */
     @PostMapping("msg/getUnreadNum")
-    public CommonResult getConversationUnreadCount(String siteId,String conversationId){
-        Long unreadMsgCount = offlineMessageService.getUnreadMsgCount(siteId, conversationId);
+    public CommonResult getConversationUnreadCount(String siteId, String conversationId) {
+        Long unreadMsgCount = offlineMessageService.getUnreadMsgCount(conversationId);
         return CommonResult.success(unreadMsgCount);
     }
-
 
 
 }
