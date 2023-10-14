@@ -9,7 +9,7 @@ docker pull postgres:13.11
 ### 2.运行容器
 
 ```
-docker run --name postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres:13.11
+docker run --name postgres --restart=always -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres:13.11
 ```
 
 ### 3.进入容器
